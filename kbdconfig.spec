@@ -6,7 +6,7 @@ Release: 1
 Copyright: GPL
 ExclusiveOS: Linux
 Group: System Environment/Base
-BuildRoot: /var/tmp/kbdconfig-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Source: kbdconfig-%{version}.tar.gz
 
 %description
