@@ -4,8 +4,7 @@ Version:	1.9.2
 Release:	1
 License:	GPL
 ExclusiveOS:	Linux
-Group:		System Environment/Base
-######		Unknown group!
+Group:		Base/Utilities
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Source0:	kbdconfig-%{version}.tar.gz
 
