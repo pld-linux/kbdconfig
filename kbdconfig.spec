@@ -31,11 +31,15 @@ konfiguruje system, by u¿ywa³ tej mapy automatycznie po w³±czeniu.
 %setup -q
 
 %build
-%{__make} RPM_OPT_FLAGS="%{rpmcflags}" MANDIR=%{_mandir}
+%{__make} \
+	RPM_OPT_FLAGS="%{rpmcflags}" \
+	MANDIR=%{_mandir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} INSTROOT=$RPM_BUILD_ROOT install MANDIR=%{_mandir}
+%{__make} install \
+	INSTROOT=$RPM_BUILD_ROOT \
+        MANDIR=%{_mandir}
 
 %find_lang %{name}
 
