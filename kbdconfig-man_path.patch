@@ -1,0 +1,30 @@
+diff -urN kbdconfig-1.9.2.orig/Makefile kbdconfig-1.9.2/Makefile
+--- kbdconfig-1.9.2.orig/Makefile	Sun Jan 10 23:01:55 1999
++++ kbdconfig-1.9.2/Makefile	Mon Feb  4 15:29:14 2002
+@@ -17,7 +17,7 @@
+ kbdconfig: kbdconfig.c
+ 
+ install:
+-	mkdir -p $(INSTROOT)/usr/sbin $(INSTROOT)/usr/man/man8
++	mkdir -p $(INSTROOT)/usr/sbin $(INSTROOT)/usr/share/man/man8
+ 	install -m 755 -s kbdconfig $(INSTROOT)/usr/sbin/kbdconfig
+ 	for d in $(SUBDIRS); do \
+ 	(cd $$d; $(MAKE) INSTROOT=$(INSTROOT) install) \
+
+diff -urN kbdconfig-1.9.2.orig/man/Makefile kbdconfig-1.9.2/man/Makefile
+--- kbdconfig-1.9.2.orig/man/Makefile	Sun Sep 27 15:45:55 1998
++++ kbdconfig-1.9.2/man/Makefile	Mon Feb  4 15:33:09 2002
+@@ -1,10 +1,10 @@
+ all:
+ 
+ install:
+-	install -m 644 en/kbdconfig.8 $(INSTROOT)/usr/man/man8
++	install -m 644 en/kbdconfig.8 $(INSTROOT)/usr/share/man/man8
+ 	for d in $(shell ls | grep -v en | grep -v Makefile); do \
+-	        mkdir -p  $(INSTROOT)/usr/man/$$d/man8 ; \
+-		install -m 644 $$d/kbdconfig.8 $(INSTROOT)/usr/man/$$d/man8 ; \
++	        mkdir -p  $(INSTROOT)/usr/share/man/$$d/man8 ; \
++		install -m 644 $$d/kbdconfig.8 $(INSTROOT)/usr/share/man/$$d/man8 ; \
+ 	done
+ 
+ clean:
