@@ -2,12 +2,13 @@ Summary:	A text-based interface for setting and loading a keyboard map
 Summary(pl):	Tekstowy interfejs do ustawiania mapy klawiatury
 Name:		kbdconfig
 Version:	1.9.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Base/Utilities
 Group(de):	Gründsätzlich/Werkzeuge
 Group(pl):	Podstawowe/Narzêdzia
 Source0:	%{name}-%{version}.tar.gz
+Patch0:		%{name}-man_path.patch
 BuildRequires:	newt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ExclusiveOS:	Linux
@@ -30,6 +31,7 @@ konfiguruje system, by u¿ywa³ tej mapy automatycznie po w³±czeniu.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make} RPM_OPT_FLAGS="%{rpmcflags}"
