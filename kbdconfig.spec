@@ -5,8 +5,6 @@ Version:	1.9.2
 Release:	2
 License:	GPL
 Group:		Base/Utilities
-Group(de):	Gründsätzlich/Werkzeuge
-Group(pl):	Podstawowe/Narzêdzia
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		%{name}-man_path.patch
 BuildRequires:	newt-devel
