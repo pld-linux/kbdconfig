@@ -8,6 +8,7 @@ Group:		Base/Utilities
 Group(de):	Gründsätzlich/Werkzeuge
 Group(pl):	Podstawowe/Narzêdzia
 Source0:	%{name}-%{version}.tar.gz
+BuildRequires:	newt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ExclusiveOS:	Linux
 
