@@ -4,12 +4,12 @@ Name:		kbdconfig
 Version:	1.9.2
 Release:	1
 License:	GPL
-ExclusiveOS:	Linux
 Group:		Base/Utilities
 Group(de):	Gründsätzlich/Werkzeuge
 Group(pl):	Podstawowe/Narzêdzia
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Source0:	%{name}-%{version}.tar.gz
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+ExclusiveOS:	Linux
 
 %description
 The kbdconfig utility is a terminal mode program for setting the
@@ -21,6 +21,12 @@ keymap automatically after rebooting.
 You should install kbdconfig if you need a utility for changing your
 keyboard map.
 
+%description -l pl
+kbdconfig to tekstowe narzêdzie do ustawiania mapy klawiatury. Taka
+mapa jest potrzebna by u¿ywaæ klawiatury innej ni¿ domy¶lna,
+amerykañska. kbdconfig wczytuje ustawion± mapê przed zakoñczeniem i
+konfiguruje system, by u¿ywa³ tej mapy automatycznie po w³±czeniu.
+
 %prep
 %setup -q
 
@@ -31,11 +37,12 @@ keyboard map.
 rm -rf $RPM_BUILD_ROOT
 %{__make} INSTROOT=$RPM_BUILD_ROOT install
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/kbdconfig
 %{_mandir}/man8/kbdconfig.8*
-%{_datadir}/locale/*/LC_MESSAGES/kbdconfig.mo
