@@ -1,12 +1,11 @@
 Summary:	A text-based interface for setting and loading a keyboard map
 Summary(pl):	Tekstowy interfejs do ustawiania mapy klawiatury
 Name:		kbdconfig
-Version:	1.9.2
-Release:	2
+Version:	1.9.15
+Release:	1
 License:	GPL
 Group:		Base/Utilities
 Source0:	%{name}-%{version}.tar.gz
-Patch0:		%{name}-man_path.patch
 BuildRequires:	newt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ExclusiveOS:	Linux
@@ -29,14 +28,13 @@ konfiguruje system, by u¿ywa³ tej mapy automatycznie po w³±czeniu.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
+%{__make} RPM_OPT_FLAGS="%{rpmcflags}" MANDIR=%{_mandir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} INSTROOT=$RPM_BUILD_ROOT install
+%{__make} INSTROOT=$RPM_BUILD_ROOT install MANDIR=%{_mandir}
 
 %find_lang %{name}
 
@@ -46,4 +44,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/kbdconfig
-%{_mandir}/man8/kbdconfig.8*
+%{_mandir}/*/*
