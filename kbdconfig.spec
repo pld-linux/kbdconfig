@@ -8,8 +8,8 @@ Group:		Base/Utilities
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	13dcd4a235a95194230d5e1b7173f6c5
 BuildRequires:	newt-devel
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ExclusiveOS:	Linux
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The kbdconfig utility is a terminal mode program for setting the
@@ -37,9 +37,10 @@ konfiguruje system, by u¿ywa³ tej mapy automatycznie po w³±czeniu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	INSTROOT=$RPM_BUILD_ROOT \
-        MANDIR=%{_mandir}
+	MANDIR=%{_mandir}
 
 %find_lang %{name}
 
