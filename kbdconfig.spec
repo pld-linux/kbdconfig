@@ -1,5 +1,5 @@
 Summary:	A text-based interface for setting and loading a keyboard map
-Summary(pl):	Tekstowy interfejs do ustawiania mapy klawiatury
+Summary(pl.UTF-8):   Tekstowy interfejs do ustawiania mapy klawiatury
 Name:		kbdconfig
 Version:	1.9.15
 Release:	1
@@ -23,11 +23,11 @@ keymap automatically after rebooting.
 You should install kbdconfig if you need a utility for changing your
 keyboard map.
 
-%description -l pl
-kbdconfig to tekstowe narzêdzie do ustawiania mapy klawiatury. Taka
-mapa jest potrzebna by u¿ywaæ klawiatury innej ni¿ domy¶lna,
-amerykañska. kbdconfig wczytuje ustawion± mapê przed zakoñczeniem i
-konfiguruje system, by u¿ywa³ tej mapy automatycznie po w³±czeniu.
+%description -l pl.UTF-8
+kbdconfig to tekstowe narzÄ™dzie do ustawiania mapy klawiatury. Taka
+mapa jest potrzebna by uÅ¼ywaÄ‡ klawiatury innej niÅ¼ domyÅ›lna,
+amerykaÅ„ska. kbdconfig wczytuje ustawionÄ… mapÄ™ przed zakoÅ„czeniem i
+konfiguruje system, by uÅ¼ywaÅ‚ tej mapy automatycznie po wÅ‚Ä…czeniu.
 
 %prep
 %setup -q
