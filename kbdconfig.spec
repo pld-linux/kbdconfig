@@ -1,5 +1,5 @@
 Summary:	A text-based interface for setting and loading a keyboard map
-Summary(pl.UTF-8):   Tekstowy interfejs do ustawiania mapy klawiatury
+Summary(pl.UTF-8):	Tekstowy interfejs do ustawiania mapy klawiatury
 Name:		kbdconfig
 Version:	1.9.15
 Release:	1
